@@ -1,3 +1,7 @@
+/* ############################################################ */
+/* TABLE MODIFICATION */
+/* ############################################################ */
+
 CREATE TABLE "GUDANG"."KATEGORIBARANG" 
    (	"KODEGOL" VARCHAR2(20 BYTE), 
 	"NAMAGOL" VARCHAR2(100 BYTE)
