@@ -81,3 +81,102 @@ CREATE TABLE "GUDANG"."BARANG"
 	"HARGA" FLOAT(126), 
 	"JUMLAH" FLOAT(126)
    );
+   
+   
+   /* ############################################################ */
+/* INSERT DATA */
+/* ############################################################ */
+
+INSERT INTO kategoribarang VALUES('HRDWR_CPU','Hardware Komponen CPU');
+INSERT INTO kategoribarang VALUES('HRDWR_PC','Hardware Komponen Desktop');
+
+/* BARANG */
+/* ASUS */
+INSERT INTO barang VALUES('ASUS1650','ASUS GTX 1650 PRO','Unit','5000000','HRDWR_CPU');
+INSERT INTO barang VALUES('ASUS1660','ASUS GTX 1660 PRO','Unit','5400000','HRDWR_CPU');
+INSERT INTO barang VALUES('ASUS2060','ASUS RTX 2060 PRO','Unit','6000000','HRDWR_CPU');
+INSERT INTO barang VALUES('ASUS2070','ASUS RTX 2070 PRO','Unit','6400000','HRDWR_CPU');
+
+
+INSERT INTO barang VALUES('NVDA2070','ASUS RTX 2070 PRO','Unit','6400000','HRDWR_CPU');
+
+/*  */
+
+/* CONTROL */
+DELETE FROM barang;
+DELETE FROM kategoribarang;
+
+SELECT * FROM kategoribarang;
+SELECT * FROM barang;
+
+-- PT 3
+
+-- Select 
+SELECT first_name, last_name 
+FROM contacts
+ORDER BY first_name, last_name DESC;
+
+-- Select by Collum
+SELECT first_name, last_name 
+FROM contacts
+ORDER BY 1, 2 DESC;
+
+
+-- NULL FIRST
+SELECT country_id, city, state
+FROM locations
+ORDER BY STATE ASC NULLS FIRST;
+
+-- NULL LAST
+SELECT country_id, city, state
+FROM locations
+ORDER BY STATE ASC NULLS LAST;
+
+-- ORDER BY HURUF BESAR
+SELECT customer_id, name
+FROM customers
+ORDER BY UPPER(name);
+
+-- ORDER DATE DESC
+SELECT * 
+FROM orders
+ORDER BY order_date DESC;
+
+-- DISTINCT
+SELECT DISTINCT first_name
+FROM contacts
+ORDER BY 1 ASC;
+
+--
+SELECT DISTINCT item_id, quantity
+FROM order_items
+ORDER BY item_id;
+
+-- Pengondisian WHERE
+SELECT DISTINCT item_id, quantity, unit_price
+FROM order_items
+WHERE item_id = '1';
+
+
+-- CONDITIONAL WHERE
+SELECT * FROM products
+WHERE product_name = 'Kingston';
+
+--CONDITIONAL OPERATOR
+SELECT * FROM
+products
+WHERE list_price > 500 AND list_price < 1000
+ORDER BY list_price ASC;
+
+-- PRODUCT
+SELECT product_id as "PRODUCT", product_name as "nama", list_price as "harga"
+FROM products
+WHERE list_price > 500 AND list_price < 1000
+ORDER BY list_price;
+
+-- ORDER BY DATE ASC
+SELECT * FROM orders
+WHERE status ='Shipped' AND salesman_id = 60 AND extract(YEAR FROM order_date) = 2017
+ORDER BY order_date ASC;
+
+-- 
