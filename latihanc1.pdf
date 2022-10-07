@@ -1,0 +1,11 @@
+SET SERVEROUTPUT ON;
+
+DECLARE
+    konsumen customers.name%TYPE;
+    BEGIN
+    SELECT name INTO konsumen
+    FROM customers
+    WHERE customer_id = 43;
+dbms_output.put_line(konsumen);
+END;
+
